@@ -111,7 +111,11 @@ button:active {
 /* Equal Button */
 
 .equal {
-    background: #1565c0;
+    background: #f59e0b;
+}
+
+.equal:hover {
+    background: #d97706;
 }
 
 .equal:hover {
