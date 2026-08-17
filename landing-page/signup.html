@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Get Started | CampusLaunch</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="signup-page">
+
+    <div class="signup-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="signup-info">
+
+            <div class="signup-logo">
+                Campus<span>Launch</span>
+            </div>
+
+            <h1>
+                Start Your Journey.
+            </h1>
+
+            <p>
+                Create your CampusLaunch account and discover
+                internships, hackathons and opportunities designed
+                for college students.
+            </p>
+
+
+            <div class="signup-features">
+
+                <div>
+                    <span>✓</span>
+                    Discover internships
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Participate in hackathons
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Build your skills and experience
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Explore career opportunities
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="signup-card">
+
+            <h2>
+                Create Your Account
+            </h2>
+
+            <p class="signup-subtitle">
+                Fill in your details to get started
+            </p>
+
+
+            <form id="signupForm">
+
+                <!-- NAME -->
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <!-- EMAIL -->
+
+                <label for="signup-email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="signup-email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <!-- COLLEGE -->
+
+                <label for="college">
+                    College / University
+                </label>
+
+                <input
+                    type="text"
+                    id="college"
+                    placeholder="Enter your college name"
+                    required
+                >
+
+
+                <!-- PASSWORD -->
+
+                <label for="signup-password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="signup-password"
+                    placeholder="Create a password"
+                    required
+                >
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <label for="confirm-password">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirm-password"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+
+                <!-- BUTTON -->
+
+                <button type="submit" class="signup-submit">
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <p class="already-account">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Log in
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+   <script>
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("signup-email").value.trim().toLowerCase();
+    const college = document.getElementById("college").value.trim();
+    const password = document.getElementById("signup-password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    const account = {
+        name: name,
+        email: email,
+        college: college,
+        password: password
+    };
+
+    localStorage.setItem("campusLaunchAccount", JSON.stringify(account));
+
+    alert("Account created successfully!");
+
+    window.location.href = "login.html";
+});
+</script>
+</body>
+
+</html>
